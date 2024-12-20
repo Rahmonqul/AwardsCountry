@@ -6,7 +6,7 @@ class AwardSerializer(ModelSerializer):
 
     class Meta:
         model = Award
-        fields = ['name', 'image', 'code']
+        fields = ['id','name', 'image', 'code']
 
 
 
@@ -17,7 +17,7 @@ class PartnerSerializer(ModelSerializer):
 
     class Meta:
         model = Partner
-        fields = ['fio', 'image', 'count_award']
+        fields = ['id','fio', 'image', 'count_award']
 
     def get_image(self, obj):
         # Возвращаем абсолютный URL изображения партнера, если есть
@@ -37,7 +37,7 @@ class AwardDetailSerializer(ModelSerializer):
 
     class Meta:
         model = Award
-        fields = ['name', 'image', 'description', 'partner_count', 'partners']
+        fields = ['id','name', 'image', 'description', 'partner_count', 'partners']
 
     def get_partners(self, obj):
         # Получаем партнеров, связанных с данной наградой
@@ -55,7 +55,7 @@ class AwardDetailSerializer(ModelSerializer):
 class AwardPartnerSerializer(ModelSerializer):
     class Meta:
         model = AwardPartner
-        fields = ['award_id', 'decision_id', 'date', 'partner_id']
+        fields = ['id','award_id', 'decision_id', 'date', 'partner_id']
 
 class DecisionSerializer(ModelSerializer):
     class Meta:
@@ -68,7 +68,7 @@ class AwardPartnerDetailSerializer(ModelSerializer):
 
     class Meta:
         model = AwardPartner
-        fields = ['award_id', 'decision_id', 'date', 'partner']  # Поле
+        fields = ['id','award_id', 'decision_id', 'date', 'partner']  # Поле
 
 
 
@@ -80,7 +80,7 @@ class PartnerSearchSerializer(ModelSerializer):
 
     class Meta:
         model = Partner
-        fields = ['fio', 'image', 'biography', 'position', 'count_award', 'awards']
+        fields = ['id','fio', 'image', 'biography', 'position', 'count_award', 'awards']
 
     def get_image(self, obj):
         request = self.context.get('request')
@@ -110,7 +110,7 @@ class PartnerDetailSerializer(ModelSerializer):
 
     class Meta:
         model = Partner
-        fields = ['fio', 'image', 'biography', 'position', 'count_award', 'awards']
+        fields = ['id','fio', 'image', 'biography', 'position', 'count_award', 'awards']
 
     def get_image(self, obj):
         request = self.context.get('request')
@@ -139,7 +139,7 @@ class AwardPartnerFilterSerializer(ModelSerializer):
 
     class Meta:
         model = AwardPartner
-        fields = ['fio', 'owner_image', 'awards']
+        fields = ['id','fio', 'owner_image', 'awards']
 
     def get_fio(self, obj):
         return obj.partner.name

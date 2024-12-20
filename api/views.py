@@ -10,17 +10,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .filters import PartnerFilter
 
 
-
-# class PartnerViewSet(ListAPIView):
-#     queryset = Partner.objects.all()
-#     serializer_class = PartnerSerializer
-#
-#
-# class DecisionViewSet(ListAPIView):
-#     queryset = Decision.objects.all()
-#     serializer_class = DecisionSerializer
-
-
 class AwardView(APIView):
     permission_classes = []
 

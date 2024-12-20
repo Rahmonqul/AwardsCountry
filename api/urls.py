@@ -9,11 +9,5 @@ urlpatterns=[
     path('search-user/', SearchUserApiView.as_view(), name='apisearchuser'),
     path('user/<int:pk>/', DetailUserApiView.as_view(), name='apidetail'),
     path('user-filter/', PartnerFilterAPIView.as_view(), name='apifilter')
-    # path("users/", UsersApiView.as_view(), name="apiusers"),
-    # path("users/search/", AwardOwnerSearchApiView.as_view(), name="apiuserssearch"),
-    # path("decree/", PresidentDecreeApiView.as_view(), name="apidecree"),
-    # path("decree/year/", PresidentDecreeYearApiView.as_view(), name="apidecreeyear"),
-    # path("decree/filter/", AwardOwnerFilterApiView.as_view(), name="apifilter"),
-    # path("order/", AwardOrderApiView.as_view(), name="apiorder"),
-    # path("decree/filter/year", AwardFilterYearApiview.as_view(), name="apifilteryear"),
+
 ]
